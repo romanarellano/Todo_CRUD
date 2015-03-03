@@ -1,0 +1,21 @@
+doctype
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title Todo List
+body
+  ul#toDoList
+    each item in todos
+      li.list
+        input(type="checkbox" data-list-id="item._id", data-checked="#{item.is_done}")
+        span.title  
+          a(href="/edit/#{item._id}")!= item.title
+        form(action="/todos/#{item._id}?_method=DELETE", method="POST")
+          button(href ="/destroy_todo" class="item" style="right:4em;min-width:140px;color:red") X
+
+ h1
+ br
+ a(href="/new_todo") New Item
+ br
+ br
+ a(href="/edit_todo") Edit Item

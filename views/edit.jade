@@ -1,0 +1,14 @@
+html
+  head
+    script(type='text/javascript', src='http://code.jquery.com/jquery-1.10.2.min.js')
+    title Edit Item
+  body
+    h1 layout
+    form(action="/edit/#{ToDo._id}?_method=PUT" , method="POST")
+      fieldset
+        div
+          input(type="text", name="title", value="#{ToDo.title}")
+        div
+          textarea(type="text", name = "description")= ToDo.description
+        div
+          input(type="submit", value="Submit")
