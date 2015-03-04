@@ -19,7 +19,13 @@ ol{
 
   margin:0;
 }
-#counter{
+#countercheck{
+
+  margin-left: 35px;
+  font-size: 0.5em;
+}
+
+#counteruncheck{
 
   margin-left: 35px;
   font-size: 0.5em;

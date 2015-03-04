@@ -3,7 +3,7 @@ html(lang="en")
 head
   script(type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js')
   link(href='styles/style.css' rel='stylesheet')
-
+  
   meta(charset="UTF-8")
   title Todo List
   script(src="/ajax.js")
@@ -13,9 +13,12 @@ body
     
     li.header 
       h1 ToDoList
-        span#counter 0 
+        span#countercheck 
           span Complete 
-        span#counter1= todos.length
+      
+        
+        
+        span#counteruncheck
           span Incomplete
         a(class="add_item" href="/new_todo") New Item
     ol#toDoList

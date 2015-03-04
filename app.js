@@ -12,6 +12,8 @@ app.use(methodOverride('_method'));
 
 mongoose.connect('mongodb://localhost/Todo_CRUD',function (err){
 
+
+
   if(err)console.log(err);
 
 });
@@ -115,19 +117,20 @@ app.delete("/destroy/:id",function (req,res){
     });
   });
 });
-var num=0;
+
 app.put('/check/:id/complete', function (req, res) {
   var toCheck = req.params.id;
-  // console.log("id coming in" ,toDoId);
-  num++;
-  document.getElementById("counter").innerHTML = num;
-
+ 
   Task.findOneAndUpdate({_id : toCheck}, { $set: {
     is_done : true
   }}, function (err){
     if (err) throw err;
     res.send('Okay');
   });
+
+
+  
+  
 });
 
 app.put('/check/:id/incomplete', function (req, res) {
@@ -138,6 +141,9 @@ app.put('/check/:id/incomplete', function (req, res) {
     if (err) throw err;
     res.send('Okay');
   });
+
+  
+
 });
   
 
