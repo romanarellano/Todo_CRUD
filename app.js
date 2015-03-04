@@ -45,10 +45,9 @@ app.get('/new_todo', function (req,res){
 
 app.get('/',function (req,res){
 
-  console.log('todo');
+  // console.log('todo');
   
   Task.find(function(err,items){
-
     if(err) throw err;
     res.render("todos", { todos : items} );
 
@@ -122,16 +121,16 @@ app.delete("/destroy/:id",function (req,res){
 
 app.put('/check/:id/complete', function (req, res) {
   var toDoId = req.params.id;
-  console.log("id coming in" ,toDoId);
+  // console.log("id coming in" ,toDoId);
   Task.findOneAndUpdate({_id : toDoId}, { $set: {
     is_done : true
-  }}, function (err, todo){
+  }}, function (err){
     if (err) throw err;
     res.send('Okay');
   });
 });
 
-app.put('/check/:id/uncomplete', function (req, res) {
+app.put('/check/:id/incomplete', function (req, res) {
   var toUndoId = req.params.id;
   Task.findOneAndUpdate({_id : toUndoId}, { $set: {
     is_done : false

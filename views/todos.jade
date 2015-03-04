@@ -8,15 +8,17 @@ head
   title Todo List
   script(src="/ajax.js")
 body
-  ul#toDoList
-    each item in todos
-      li.list
-        p!= item._id 
-        input(type="checkbox" data-list-id="#{item._id}" action="/check/#{item._id}/complete" )
-        span.title  
-          a(href="/edit/#{item._id}")!= item.title
-        form(action="/destroy/#{item._id}?_method=DELETE", method="POST")
-          button(class="x_button" style="right:4em;min-width:140px;color:red") X
+  h1 ToDo List
+  div(class="container")
+    ol#toDoList
+      each item in todos
+        li.list
+          //- p!= item._id 
+          input(type="checkbox" data-list-id="#{item._id}" data-checked="#{item.is_done}")
+          span.title  
+            a(href="/edit/#{item._id}")!= item.title
+          form(action="/destroy/#{item._id}?_method=DELETE", method="POST")
+            button( style="right:4em;color:red") X
 
  h1
  br

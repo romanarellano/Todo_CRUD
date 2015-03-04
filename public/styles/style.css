@@ -2,3 +2,36 @@ body{
 
   background:grey;
 }
+
+h1{
+
+  text-align: center;
+  color:yellow;
+}
+
+button{
+
+  float:right;
+
+}
+
+.container{
+
+  background:white;
+  margin: 1em auto;
+  max-width: 40em;
+}
+
+li.list{
+  line-height: 30px;
+  border: 2px green solid;
+  
+}
+
+input[type="checkbox"]{
+
+  height: 3em;
+  width:2em;
+  vertical-align: middle;
+  color:blue;
+}
