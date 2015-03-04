@@ -32,9 +32,6 @@ var Task = mongoose.model("ToDo", ToDoSchema);
 
 
 
-
-
-
 app.get('/new_todo', function (req,res){
 
   res.render('new_todo');
@@ -113,16 +110,19 @@ app.delete("/destroy/:id",function (req,res){
 
           console.log("null");
         }
-      res.redirect('/');
+        res.redirect('/');
 
     });
   });
 });
-
+var num=0;
 app.put('/check/:id/complete', function (req, res) {
-  var toDoId = req.params.id;
+  var toCheck = req.params.id;
   // console.log("id coming in" ,toDoId);
-  Task.findOneAndUpdate({_id : toDoId}, { $set: {
+  num++;
+  document.getElementById("counter").innerHTML = num;
+
+  Task.findOneAndUpdate({_id : toCheck}, { $set: {
     is_done : true
   }}, function (err){
     if (err) throw err;
@@ -131,8 +131,8 @@ app.put('/check/:id/complete', function (req, res) {
 });
 
 app.put('/check/:id/incomplete', function (req, res) {
-  var toUndoId = req.params.id;
-  Task.findOneAndUpdate({_id : toUndoId}, { $set: {
+  var toUncheck = req.params.id;
+  Task.findOneAndUpdate({_id : toUncheck}, { $set: {
     is_done : false
   }}, function (err, todo){
     if (err) throw err;

@@ -4,27 +4,76 @@ body{
 }
 
 h1{
-
-  text-align: center;
-  color:yellow;
+  /*padding-top: 1em;*/
+  padding: 0.6em 0 0 20px;
+  text-align: left;
+  color:purple;
 }
+.header{
+
+  border-bottom:2px solid green;
+  list-style-type: none;
+  padding-top: 5px;
+}
+ol{
+
+  margin:0;
+}
+#counter{
+
+  margin-left: 35px;
+  font-size: 0.5em;
+}
+
 
 button{
 
   float:right;
+  margin:-30px 4px 0 0;
+  height: 2em;
+  width: 3em;
+  font-weight: 700;
+  font-size: 12px;
+}
 
+button:hover{
+
+  color:white;
+  background:orange;
 }
 
 .container{
 
-  background:white;
+  background:#EDEFDC;
   margin: 1em auto;
   max-width: 40em;
+
+}
+span.title a{
+
+  text-decoration: none;
+}
+
+
+.add_item{
+
+  float:right;
+  text-decoration: none;
+  background:#D86B21;
+  font-size: 23px;
+  margin: -5px 1em;
+  padding:0.5em;
+  color:#EDEDED;
+}
+.add_item:before{
+
+  content: "+";
 }
 
 li.list{
   line-height: 30px;
-  border: 2px green solid;
+  /*border-top: 2px green solid;*/
+  border-bottom: 2px green solid;
   
 }
 
@@ -34,4 +83,5 @@ input[type="checkbox"]{
   width:2em;
   vertical-align: middle;
   color:blue;
+  background:blue;
 }

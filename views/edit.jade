@@ -1,9 +1,12 @@
 html
   head
+    
     script(type='text/javascript', src='http://code.jquery.com/jquery-1.10.2.min.js')
     title Edit Item
+    link(href='styles/style.css' rel='stylesheet')
   body
-    h1 layout
+
+    h1 Edit Item
     form(action="/edit/#{ToDo._id}?_method=PUT" , method="POST")
       fieldset
         div
