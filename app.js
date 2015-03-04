@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 
 app.use(bodyParser.urlencoded({ extended:false }));
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.set('view engine','jade');
 app.use(methodOverride('_method'));
 
@@ -96,13 +96,51 @@ app.put('/edit/:id', function (req,res){
       title: req.body.title,
       description: req.body.description
     
-    }}, function (err,todo){
-      if (err) throw err;
+    }}, function (err){
+          
+          if (err) throw err;
+          res.redirect('/');
+
+        });
+    
+});
+
+app.delete("/destroy/:id",function (req,res){
+
+  Task.findById(req.params.id, function (err,item){
+
+    item.remove(function (err,todo){
+        if(todo === null){
+
+          console.log("null");
+        }
       res.redirect('/');
 
     });
-    
   });
+});
+
+app.put('/check/:id/complete', function (req, res) {
+  var toDoId = req.params.id;
+  console.log("id coming in" ,toDoId);
+  Task.findOneAndUpdate({_id : toDoId}, { $set: {
+    is_done : true
+  }}, function (err, todo){
+    if (err) throw err;
+    res.send('Okay');
+  });
+});
+
+app.put('/check/:id/uncomplete', function (req, res) {
+  var toUndoId = req.params.id;
+  Task.findOneAndUpdate({_id : toUndoId}, { $set: {
+    is_done : false
+  }}, function (err, todo){
+    if (err) throw err;
+    res.send('Okay');
+  });
+});
+  
 
 
 

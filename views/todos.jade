@@ -1,17 +1,22 @@
 doctype
 html(lang="en")
 head
+  script(type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js')
+  link(href='styles/style.css' rel='stylesheet')
+
   meta(charset="UTF-8")
   title Todo List
+  script(src="/ajax.js")
 body
   ul#toDoList
     each item in todos
       li.list
-        input(type="checkbox" data-list-id="item._id", data-checked="#{item.is_done}")
+        p!= item._id 
+        input(type="checkbox" data-list-id="#{item._id}" action="/check/#{item._id}/complete" )
         span.title  
           a(href="/edit/#{item._id}")!= item.title
-        form(action="/todos/#{item._id}?_method=DELETE", method="POST")
-          button(href ="/destroy_todo" class="item" style="right:4em;min-width:140px;color:red") X
+        form(action="/destroy/#{item._id}?_method=DELETE", method="POST")
+          button(class="x_button" style="right:4em;min-width:140px;color:red") X
 
  h1
  br
