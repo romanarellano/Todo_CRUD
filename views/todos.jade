@@ -1,13 +1,6 @@
-doctype
-html(lang="en")
-head
-  script(type='text/javascript' src='http://code.jquery.com/jquery-1.10.2.min.js')
-  link(href='styles/style.css' rel='stylesheet')
-  
-  meta(charset="UTF-8")
-  title Todo List
-  script(src="/ajax.js")
-body
+extends ./add_to_todos.jade
+
+block content
   //- h1 ToDo List
   div(class="container")
     
@@ -29,6 +22,10 @@ body
           
             form(action="/destroy/#{item._id}?_method=DELETE" method="POST")
               button X
+
+
+      mixin MyList(item)
+        
 
 
 

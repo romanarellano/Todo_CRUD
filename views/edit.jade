@@ -1,17 +1,17 @@
-html
-  head
-    
-    script(type='text/javascript', src='http://code.jquery.com/jquery-1.10.2.min.js')
-    title Edit Item
-    link(href='styles/style.css' rel='stylesheet')
-  body
-
-    h1 Edit Item
-    form(action="/edit/#{ToDo._id}?_method=PUT" , method="POST")
-      fieldset
-        div
-          input(type="text", name="title", value="#{ToDo.title}")
-        div
-          textarea(type="text", name = "description")= ToDo.description
-        div
-          input(type="submit", value="Submit")
+extends ./add_to_edit.jade
+  
+block content 
+    div.form
+      h1 Edit Item
+      form(action="/edit/#{ToDo._id}?_method=PUT" , method="POST")
+        fieldset
+          div.title  Title
+          div
+            input(type="text"  name="title", value="#{ToDo.title}")
+          br
+          div.title Description
+          div
+            textarea(type="text", name = "description")= ToDo.description
+          div
+            button Save
+            //- input(type="submit", value="Save")

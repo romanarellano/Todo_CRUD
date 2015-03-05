@@ -97,8 +97,10 @@ span:first-child{
   padding-left: 1.5em;
 }
 
-.cross{
+div.form{
+  
+  margin:0 auto;
 
-  text-decoration: line-through;
 }
+
 
