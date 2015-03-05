@@ -58,7 +58,8 @@ app.post('/todos',function (req,res){
   var todo = new Task ({
      title: req.body.title,
      description: req.body.description,
-     is_done: req.body.is_done,
+     is_done: false,
+     // req.body.is_done,
      created_at: new Date()
   });
 

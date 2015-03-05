@@ -5,14 +5,5 @@ block content
     div.form
       h1 Edit Item
       form(action="/edit/#{ToDo._id}?_method=PUT" , method="POST")
-        fieldset
-          div.title  Title
-          div
-            input(type="text"  name="title", value="#{ToDo.title}")
-          br
-          div.title Description
-          div
-            textarea(type="text", name = "description")= ToDo.description
-          div
-            button Save
-            
+        include jade_includer/edit_include.jade
+        
