@@ -73,7 +73,7 @@ span.title a{
 }
 .add_item:before{
 
-  content: "+";
+  content: "+ ";
 }
 
 li.list{
@@ -91,3 +91,14 @@ input[type="checkbox"]{
   color:blue;
   background:blue;
 }
+
+span:first-child{
+
+  padding-left: 1.5em;
+}
+
+.cross{
+
+  text-decoration: line-through;
+}
+
