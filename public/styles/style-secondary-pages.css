@@ -1,11 +1,12 @@
+
 @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light|Sigmar+One);
 
 
 body{
 
   background:#EDEFDC;
-}
 
+}
 .form{
 
   background-image: url("/images/footer_lodyas.png");
@@ -13,6 +14,7 @@ body{
   max-width: 45em;
   font-size:1em;
 }
+
 h1{
   background-image: url("/images/grey_wash_wall_@2X.png");
   text-align: center;
@@ -32,7 +34,7 @@ textarea{
   min-width:38em;
   font-size: 9pt;
   text-align: center;
-  
+
 }
 
 form{
