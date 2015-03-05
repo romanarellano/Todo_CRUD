@@ -108,6 +108,9 @@ app.delete("/destroy/:id",function (req,res){
   Task.findById(req.params.id, function (err,item){
 
     item.remove(function (err,todo){
+        
+        if(err) throw err;
+
         if(todo === null){
 
           console.log("null");

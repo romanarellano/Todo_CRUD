@@ -49,6 +49,8 @@ $(document).ready(function(){
   // select all checkboxes with data of checked
   $("input[data-checked=true]").prop('checked', true);
 
+     $("input[data-checked=true]").prop('checked', true).closest("li").css({"text-decoration":"line-through"});
+
     var checked = $(":checked").length;
 
     var total = $("input[type=checkbox]").length;
