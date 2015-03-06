@@ -26,22 +26,17 @@ h1{
   letter-spacing:4px;
   font-family:"Sigmar One", cursive;
 }
-
-textarea{
-
-  height:14em;
-  margin: 1em auto;
-  min-width:38em;
-  font-size: 9pt;
-  text-align: center;
-
-}
-
 form{
 
   text-align: center;
 }
+.title{
 
+  font-size: 2em;
+  color:yellow;
+  font-family:"Sigmar One", cursive;
+  letter-spacing:5px;
+}
 input[type=text]{
 
   width:21em;
@@ -52,14 +47,15 @@ input[type=text]{
   
 }
 
-.title{
+textarea{
 
-  font-size: 2em;
-  color:yellow;
-  font-family:"Sigmar One", cursive;
-  letter-spacing:5px;
+  height:14em;
+  margin: 1em auto;
+  min-width:38em;
+  font-size: 9pt;
+  text-align: center;
+
 }
-
 
 button{
 

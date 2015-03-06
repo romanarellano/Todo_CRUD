@@ -2,12 +2,12 @@ body{
 
   background:grey;
 }
+.container{
 
-h1{
-  /*padding-top: 1em;*/
-  padding: 0.6em 0 0 20px;
-  text-align: left;
-  color:purple;
+  background:#EDEFDC;
+  margin: 1em auto;
+  max-width: 40em;
+
 }
 .header{
 
@@ -15,9 +15,17 @@ h1{
   list-style-type: none;
   padding-top: 5px;
 }
+h1{
+  /*padding-top: 1em;*/
+  padding: 0.6em 0 0 20px;
+  text-align: left;
+  color:purple;
+}
+
 ol{
 
   margin:0;
+  
 }
 #countercheck{
 
@@ -30,7 +38,37 @@ ol{
   margin-left: 35px;
   font-size: 0.5em;
 }
+.add_item{
 
+  float:right;
+  text-decoration: none;
+  background:#D86B21;
+  font-size: 23px;
+  margin: -5px 1em;
+  padding:0.5em;
+  color:#EDEDED;
+}
+li.list{
+  line-height: 30px;
+  /*border-top: 2px green solid;*/
+  border-bottom: 2px green solid;
+  
+}
+input[type="checkbox"]{
+
+  height: 3em;
+  width:2em;
+  vertical-align: middle;
+  color:blue;
+  background:blue;
+
+}
+span.title span a{
+
+  text-decoration: none;
+  text-align: center;
+  margin:auto;
+}
 
 button{
 
@@ -48,53 +86,27 @@ button:hover{
   background:orange;
 }
 
-.container{
-
-  background:#EDEFDC;
-  margin: 1em auto;
-  max-width: 40em;
-
-}
-span.title a{
-
-  text-decoration: none;
-}
 
 
-.add_item{
 
-  float:right;
-  text-decoration: none;
-  background:#D86B21;
-  font-size: 23px;
-  margin: -5px 1em;
-  padding:0.5em;
-  color:#EDEDED;
-}
+
+
+
 .add_item:before{
 
   content: "+ ";
 }
 
-li.list{
-  line-height: 30px;
-  /*border-top: 2px green solid;*/
-  border-bottom: 2px green solid;
-  
+
+span{
+
+ 
+  text-align: center;
 }
 
-input[type="checkbox"]{
+p{
 
-  height: 3em;
-  width:2em;
-  vertical-align: middle;
-  color:blue;
-  background:blue;
-}
-
-span:first-child{
-
-  padding-left: 1.5em;
+  display:none;
 }
 
 

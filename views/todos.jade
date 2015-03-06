@@ -1,20 +1,21 @@
 extends ./add_to_todos.jade
 
 mixin list(arr)
-  ol#toDoList
-      each item in arr
-        li.list
-          //- p= item._id 
-          input(type="checkbox" data-list-id="#{item._id}" data-checked="#{item.is_done}")
-          span.title  
+  ol
+    each item in arr
+      li.list
+        input(type="checkbox" data-list-id="#{item._id}" data-checked="#{item.is_done}")
+        span.title  
+          span
             a(href="/edit/#{item._id}")!= item.title
-          
-            form(action="/destroy/#{item._id}?_method=DELETE" method="POST")
-              button X
+        div
+          p= item.description
+          form(action="/destroy/#{item._id}?_method=DELETE" method="POST")
+            button X
 
 
 block content
-  //- h1 ToDo List
+  
   div(class="container")
     
     li.header 
@@ -25,7 +26,7 @@ block content
         span#counteruncheck
           span Incomplete
         a(class="add_item" href="/new_todo") New Item
-  +list(todos)
+    +list(todos)
 
 
  
